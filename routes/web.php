@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AsistantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AsistantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,7 @@ Route::resource('/register', AsistantController::class);
 Route::get('/admin', function () {
     return view('admin/index');
 });
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);

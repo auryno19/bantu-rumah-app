@@ -62,7 +62,7 @@
                             </div>
                         @enderror
                         <div class="d-grid gap-2" style="text-align: right;">
-                            <a href="/forgot" class="lupapw line-clamp-1">Lupa password ?</a>
+                            {{-- <a href="/forgot" class="lupapw line-clamp-1">Lupa password ?</a> --}}
                             <button type="submit" class="btn button-login">Masuk</button>
                             <a href="/" class="text-center lupapw">Kembali</a>
                     </div>
