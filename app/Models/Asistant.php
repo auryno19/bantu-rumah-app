@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Asistant extends Model
 {
-    use HasFactory;
+    protected $table = 'asistants';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'nama',

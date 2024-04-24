@@ -35,6 +35,8 @@ class AsistantController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd($request);
         $request->validate([
             'nama' => 'required',
             'umur' => 'required|numeric',
@@ -49,7 +51,7 @@ class AsistantController extends Controller
         $request->foto->move(public_path('images/photo-assist/'), $PhotoName);
 
         $asistant = new Asistant;
-        
+        // dd($asistant);
         $asistant->nama = $request->get('nama');
         $asistant->umur = $request->get('umur');
         $asistant->gender = $request->get('gender');
@@ -57,8 +59,12 @@ class AsistantController extends Controller
         $asistant->keterangan = $request->get('keterangan');
         $asistant->deskripsi = $request->get('deskripsi');
         $asistant->foto = $PhotoName;
-    
+        // dd($asistant);
+
+        
         $asistant->save();
+
+        return redirect('/register')->with('success', 'Kategori baru telah ditambahkan');
     }
 
     /**
