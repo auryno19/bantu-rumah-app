@@ -59,8 +59,7 @@ class AsistantController extends Controller
         $asistant->keterangan = $request->get('keterangan');
         $asistant->deskripsi = $request->get('deskripsi');
         $asistant->foto = $PhotoName;
-        // dd($asistant);
-
+        // dd($asistant)
         
         $asistant->save();
 
