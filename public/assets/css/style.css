@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap');
+
+*{
+    font-family: 'Recursive';
+}
+
+.jumbotron{
+    position: relative;
+    padding: 20px;
+    padding-top: 80px;
+    background-color: #269dff;
+    height: 260px;
+}
+
+.nav-link{
+    color: #313131;
+}
+.nav-link:hover{
+    color: black;
+}
+
+.nav-breadcrumb{
+    position: absolute;
+    bottom: 10%;
+    left: 2%;
+}
+
+.breadcrumb-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb-item a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.container{
+    padding:50px;
+}
+
+.container-fluid img{
+    position: absolute;
+    margin: 30px;
+}
+
+.container .form-control, .container .form-select{
+    width: 70%;
+    background-color: #bcbcbc;
+}
+
+.container .form-label{
+    width: 70%;
+}
+
+.list-recom{
+    padding-left: 25px;
+    margin-top: 50px;
+}
+.list-recom img{
+    position: relative;
+    margin: 0;
+    height: 200px;
+    width: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.description{
+    flex-wrap: wrap;
+}
+
+
+.btn-submit{
+    background-color: #308cdb;
+}
+.btn-submit:hover{
+    background-color: #194d7b;
+    color: white;
+}
+
+.footer{
+    height: 380px;
+    background-color: #269dff;
+    padding: 50px 80px;
+}
+
+.circle {
+    background-color: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.circle img {
+    width: 65%;
+    height: auto;
+    position: relative;
+    top: 50%;
+    left: 18%;
+    transform: translate(0%, -50%);
+  }
+
+.footer .form-control{
+    width: 90%;
+}
+.btn-subscribe{
+    background-color: #bcbcbc;
+}
+.btn-subscribe:hover{
+    background-color: #4e4e4e;
+}
+
+.register-link a{
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.register-link a:hover{
+    color: #464646;
+}
+.line-footer {
+    bottom: 0;
+    padding: 21px 15px 20px;
+    position: relative;
+    right: 0;
+    color: #6c757d;
+    left: 0px;
+    background-color: #f3f3f3; 
+}

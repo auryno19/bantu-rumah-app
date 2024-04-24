@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AsistantController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [IndexController::class, 'index']);
+Route::get('/form', function () {
+    return view('form');
+});
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::resource('/register', AsistantController::class);
+
+Route::get('/admin', function () {
+    return view('admin/index');
 });
