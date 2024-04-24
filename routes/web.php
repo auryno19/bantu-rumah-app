@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
@@ -26,9 +27,8 @@ Route::get('/login', function () {
 
 Route::resource('/register', AsistantController::class);
 
-Route::get('/admin', function () {
-    return view('admin/index');
-});
+
+Route::get('/admin', [AdminController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
