@@ -20,8 +20,19 @@
             <tr>
                 <th scope="row">1</th>
                 <td>{{ $asistant->nama }}</td>
-                <td>{{ $asistant->gender }}</td>
-                <td>{{ $asistant->keterangan }}</td>
+                <td>
+                @if ($asistant->gender == "L")
+                  Laki-Laki
+                @elseif ($asistant->gender == "P")
+                  Perempuan
+                @endif
+                <td>
+                  @if ($asistant->keterangan == "PP")
+                      Pulang-Pergi
+                  @elseif ($asistant->keterangan == "M")
+                      Menetap
+                  @endif
+                </td>
               </tr>
             @endforeach
 
