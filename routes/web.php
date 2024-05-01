@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AsistantController;
 
 /*
@@ -29,6 +30,8 @@ Route::resource('/register', AsistantController::class);
 
 
 Route::get('/admin', [AdminController::class, 'index']);
+
+Route::post('/search', [SearchController::class, 'search'])->name('search');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);

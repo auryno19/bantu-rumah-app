@@ -163,6 +163,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // Sastrawi\Sastrawi\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -190,8 +191,14 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // ...
-    ])->toArray(),
+    'aliases' => 
+    
+    [
+
+        Facade::defaultAliases()->merge([
+            // ...
+        ])->toArray(),
+        // 'Sastrawi' => Sastrawi\Sastrawi\Facade::class,
+    ]
 
 ];

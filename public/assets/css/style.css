@@ -53,6 +53,13 @@
     width: 70%;
 }
 
+.line-clamp-5 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+}
+
 .list-recom{
     padding-left: 25px;
     margin-top: 50px;

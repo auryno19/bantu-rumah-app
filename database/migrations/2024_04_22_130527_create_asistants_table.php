@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('gender');
             $table->string('alamat');
             $table->string('keterangan');
-            $table->string('deskripsi');
-            $table->string('foto');
+            $table->longText('deskripsi');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

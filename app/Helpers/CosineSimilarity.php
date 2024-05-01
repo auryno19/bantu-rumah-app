@@ -12,8 +12,8 @@ class CosineSimilarity
 
     public function __construct()
     {
-        $this->stemmer = StemmerFactory::createStemmer();
-        $this->tokenizer = TokenizerFactory::createTokenizer();
+        $this->stemmer = new StemmerFactory();
+        $this->tokenizer = new TokenizerFactory();
     }
 
     public function calculateSimilarity($query, $document)

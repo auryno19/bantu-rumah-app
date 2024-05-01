@@ -18,7 +18,7 @@
         <tbody>
             @foreach ($asistants as $asistant)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{ $iteration++ }}</th>
                 <td>{{ $asistant->nama }}</td>
                 <td>
                 @if ($asistant->gender == "L")
@@ -38,6 +38,10 @@
 
         </tbody>
       </table>
+
+      <div>
+        {{ $asistants->links() }}
+      </div>
     @else
         <h1>Asisten belum tersedia</h1>
     @endif

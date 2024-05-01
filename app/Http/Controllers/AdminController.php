@@ -9,9 +9,9 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $asistants = Asistant::get();
-
-         return view('admin.index', compact('asistants'));
+        $asistants = Asistant::paginate(8);
+        $iteration = $asistants->firstItem();
+         return view('admin.index', compact('asistants', 'iteration'));
     }
 
 }
