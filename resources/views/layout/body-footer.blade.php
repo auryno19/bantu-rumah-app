@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="row">
         <div class="col-lg-5">
-            <img src="{{ asset('assets/images/logo.png') }}" class="mb-3" alt="logo" height="70">
+            <img src="{{ asset('assets/images/logo-white-text.png') }}" class="mb-3" alt="logo" height="100">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad sapiente perspiciatis dolores iure minima excepturi aut hic exercitationem corporis. Consequuntur at maxime asperiores cumque natus veniam atque rerum, ea repellendus!</p>
             <div class="row ">
                 <div class="col-lg-3 d-flex justify-content-center">

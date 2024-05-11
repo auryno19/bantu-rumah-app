@@ -11,8 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
     </script>
+
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo-bg.png') }}">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Website Properti</title>
+    <title>Bantu Rumah | Login</title>
 </head>
 <style>
     body {
@@ -34,7 +36,7 @@
                 <div class="card-body" >
                     <div class="text-center">
 
-                        <img src="{{ asset('assets/images/logo-light.png') }}"  class="loginImage" alt="logo">
+                        <img src="{{ asset('assets/images/logo-no-bg.png') }}"  class="loginImage" alt="logo" height="120">
                     </div>
 
                     <h4 class="mb-3"><b>LOGIN</b></h4>
@@ -63,7 +65,7 @@
                         @enderror
                         <div class="d-grid gap-2" style="text-align: right;">
                             {{-- <a href="/forgot" class="lupapw line-clamp-1">Lupa password ?</a> --}}
-                            <button type="submit" class="btn button-login">Masuk</button>
+                            <button type="submit" class="btn btn-submit mt-4">Masuk</button>
                             <a href="/" class="text-center lupapw">Kembali</a>
                     </div>
 

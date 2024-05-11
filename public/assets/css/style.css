@@ -124,6 +124,17 @@
     color: white;
 }
 
+.lupapw {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.lupapw:hover {
+    color: #3792b3;
+    text-decoration: none;
+}
+
 .invalid-feedback {
     display: block !important;
     width: 70% !important;

@@ -1,6 +1,8 @@
 <nav class="navbar fixed-top bg-light" data-bs-theme="light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">
+        <img src="{{ asset('assets/images/logo-text.png') }}" style=" margin: 0;" alt="logo bantu rumah" height="40">
+      </a>
       <ul class="nav justify-content-end">
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
