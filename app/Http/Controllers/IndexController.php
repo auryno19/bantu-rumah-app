@@ -13,6 +13,12 @@ class IndexController extends Controller
 
          return view('index', compact('asistants'));
     }
+    public function profile($id)
+    {
+        $asistant = Asistant::find($id);
+
+         return view('profile', compact('asistant'));
+    }
 
 
 }

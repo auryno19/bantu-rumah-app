@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('umur');
             $table->string('gender');
             $table->string('alamat');
+            $table->string('telepon');
             $table->string('keterangan');
             $table->longText('deskripsi');
             $table->string('foto')->nullable();

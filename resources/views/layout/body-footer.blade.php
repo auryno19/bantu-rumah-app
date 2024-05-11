@@ -1,22 +1,22 @@
 <div class="footer">
     <div class="row">
         <div class="col-lg-5">
-            <img src="assets/images/logo.png" class="mb-3" alt="logo" height="70">
+            <img src="{{ asset('assets/images/logo.png') }}" class="mb-3" alt="logo" height="70">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad sapiente perspiciatis dolores iure minima excepturi aut hic exercitationem corporis. Consequuntur at maxime asperiores cumque natus veniam atque rerum, ea repellendus!</p>
             <div class="row ">
                 <div class="col-lg-3 d-flex justify-content-center">
                     <div class="circle">
-                        <img src="assets/images/instagram.png" class="mb-3" alt="logo instagram" height="30">
+                        <img src="{{ asset('assets/images/instagram.png') }}" class="mb-3" alt="logo instagram" height="30">
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex justify-content-center">
                     <div class="circle">
-                        <img src="assets/images/facebook.png" class="mb-3" alt="logo facebook" height="30">
+                        <img src="{{ asset('assets/images/facebook.png') }}" class="mb-3" alt="logo facebook" height="30">
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex justify-content-center">
                     <div class="circle">
-                        <img src="assets/images/linkedin.png" class="mb-3" alt="logo linkedin" height="30">
+                        <img src="{{ asset('assets/images/facebook.png') }}" class="mb-3" alt="logo linkedin" height="30">
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@
                 @foreach ($asistants as $asistant)
                     <div class="row mb-3">
                         <div class="col-md-5">
-                            <img src="assets/images/img1.jpg" alt="gambar">
+                            <img src="{{ asset('assets/images/img1.jpg') }}" alt="gambar">
                         </div>
                         <div class="description col-md-7 d-flex align-content-center">
                             <div class="row">
@@ -28,7 +28,7 @@
                                     <button class="btn btn-submit">Booking</button>
                                 </div>
                                 <div class="col-md-3">
-                                    <button class="btn btn-submit">Profile</button>
+                                    <a type="button" href="/profile/{{ $asistant->id }}" class="btn btn-submit">Profile</a>
                                 </div>
                             </div>
                         </div>

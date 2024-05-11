@@ -15,6 +15,7 @@ class Asistant extends Model
         'umur',
         'gender',
         'alamat',
+        'telepon',
         'keterangan',
         'deskripsi',
         'foto',

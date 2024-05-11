@@ -58,6 +58,14 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="mb-3 row d-flex justify-content-center">
+                            <input class="form-control" type="text" placeholder="Telepon" name="telepon">
+                            @error('telepon')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        </div>
+                        <div class="mb-3 row d-flex justify-content-center">
                             <select class="form-select" aria-label="Default select example" name="keterangan">
                                 <option selected value="">Pulang Pergi / Menetap</option>
                                 <option value="PP">Pulang Pergi</option>

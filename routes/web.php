@@ -19,6 +19,8 @@ use App\Http\Controllers\AsistantController;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/profile/{id}', [IndexController::class, 'profile']);
+
 Route::get('/form', function () {
     return view('form');
 });

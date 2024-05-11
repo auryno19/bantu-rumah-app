@@ -39,6 +39,10 @@
     padding:50px;
 }
 
+.container-profile{
+    padding:30px;
+}
+
 .container-fluid img{
     position: absolute;
     margin: 30px;
@@ -67,8 +71,21 @@
 .list-recom img{
     position: relative;
     margin: 0;
-    height: 200px;
-    width: 400px;
+    height: 350px;
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.wrap{
+    margin-top: 50px;
+}
+.wrap img{
+    position: relative;
+    margin: 0;
+    height: 450px;
+    width: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 10px;

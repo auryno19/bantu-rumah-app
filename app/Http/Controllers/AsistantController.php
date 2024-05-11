@@ -42,6 +42,7 @@ class AsistantController extends Controller
             'umur' => 'required|numeric',
             'gender' => 'required',
             'alamat' => 'required',
+            'telepon' => 'required|numeric',
             'keterangan' => 'required',
             'deskripsi' => 'required',
             'foto' => 'mimes:png,jpeg,jpg|max:2048',
@@ -56,6 +57,7 @@ class AsistantController extends Controller
         $asistant->umur = $request->get('umur');
         $asistant->gender = $request->get('gender');
         $asistant->alamat = $request->get('alamat');
+        $asistant->telepon = $request->get('telepon');
         $asistant->keterangan = $request->get('keterangan');
         $asistant->deskripsi = $request->get('deskripsi');
         $asistant->foto = $PhotoName;
