@@ -23,7 +23,14 @@
           <a class="nav-link" href="#">Tentang Kami</a>
         </li>
         <li class="nav-item">
+          @auth
+            
+          <a class="btn btn-submit" href="/admin">Dashboard</a>
+          @endauth
+          @guest
+            
           <a class="btn btn-submit" href="/login">Login</a>
+          @endguest
         </li>
 
       </ul>

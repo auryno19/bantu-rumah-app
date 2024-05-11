@@ -24,19 +24,20 @@ Route::get('/profile/{id}', [IndexController::class, 'profile']);
 Route::get('/form', function () {
     return view('form');
 });
-Route::get('/login', function () {
-    return view('login');
-});
 
 Route::get('/register', [IndexController::class, 'register']);
 Route::post('/register', [AsistantController::class, 'store']);
 
-Route::resource('/admin/asistant', AsistantController::class);
-
-Route::get('/admin', [AdminController::class, 'index']);
 
 Route::post('/search', [SearchController::class, 'search'])->name('search');
 
+Route::middleware('guest')->group( function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::get('/logout', [LoginController::class, 'logout']);
+});
+
+Route::middleware('checkRole')->group( function () {
+    Route::resource('/admin/asistant', AsistantController::class);
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/logout', [LoginController::class, 'logout']);
+});
