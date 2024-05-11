@@ -28,8 +28,10 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::resource('/register', AsistantController::class);
+Route::get('/register', [IndexController::class, 'register']);
+Route::post('/register', [AsistantController::class, 'store']);
 
+Route::resource('/admin/asistant', AsistantController::class);
 
 Route::get('/admin', [AdminController::class, 'index']);
 

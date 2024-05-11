@@ -57,6 +57,15 @@
     width: 70%;
 }
 
+.container-admin .form-control, .container-admin .form-select{
+    width: 70%;
+    /* background-color: #bcbcbc; */
+}
+
+.container-admin .form-label{
+    width: 70%;
+}
+
 .line-clamp-5 {
     -webkit-box-orient: vertical;
     display: -webkit-box;
@@ -97,16 +106,25 @@
 
 
 .btn-submit{
-    background-color: #308cdb;
+    background-color: #308cdb !important;
 }
 .btn-submit:hover{
     background-color: #194d7b;
     color: white;
 }
 
+.btn-admin{
+    background-color: #3bafda !important;
+    color: white !important;
+}
+.btn-admin:hover{
+    background-color: #3792b3 !important;
+    color: white;
+}
+
 .invalid-feedback {
-    display: block;
-    width: 70%;
+    display: block !important;
+    width: 70% !important;
 }
 
 

@@ -1,7 +1,7 @@
 <div class="navbar-custom">
     <a href="index.html" class="logo text-center d-none d-md-inline-block mr-2">
         <span class="logo-lg">
-            <img src="assets/images/logo-light.png" alt="" height="16">
+            <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="16">
         </span>
     </a>
 

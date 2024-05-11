@@ -17,8 +17,11 @@ class IndexController extends Controller
     {
         $asistant = Asistant::find($id);
 
-         return view('profile', compact('asistant'));
+        return view('profile', compact('asistant'));
     }
 
+    public function register(){
+        return view('register');
+    }
 
 }

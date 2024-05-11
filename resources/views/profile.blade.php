@@ -29,18 +29,18 @@
                             </div>
                             
                             @if ($asistant->gender == 'P' )
-                            <h5><i class="fa-solid fa-venus mb-3"></i> Perempuan</h5>
+                            <h5><i class="fa-solid fa-venus mb-3 me-1"></i> Perempuan</h5>
                             @elseif($asistant->gender == 'L' )
-                            <h5><i class="fa-solid fa-mars mb-3"></i> Laki-Laki</h5>
+                            <h5><i class="fa-solid fa-mars mb-3 me-1"></i> Laki-Laki</h5>
                             @endif
 
                             @if ($asistant->keterangan == 'PP' )
-                            <h5><i class="fa-solid fa-suitcase-rolling mb-3"></i></i> Pulang Pergi</h5>
+                            <h5><i class="fa-solid fa-suitcase-rolling mb-3 me-1"></i></i> Pulang Pergi</h5>
                             @elseif($asistant->keterangan == 'M' )
-                            <h5><i class="fa-solid fa-house mb-3"></i> Menetap</h5>
+                            <h5><i class="fa-solid fa-house mb-3 me-1"></i> Menetap</h5>
                             @endif
                                
-                            <h5><i class="fa-solid fa-location-dot mb-3"></i> {{ $asistant->alamat }}</h5>
+                            <h5><i class="fa-solid fa-location-dot mb-3 me-1"></i> {{ $asistant->alamat }}</h5>
 
                             <h5>Deskripsi</h5>
                             <p style="text-align: justify;">{{ $asistant->deskripsi }}</p>
