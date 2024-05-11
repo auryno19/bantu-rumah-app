@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $asistants = Asistant::get();
+        $asistants = Asistant::paginate(5);
 
          return view('index', compact('asistants'));
     }

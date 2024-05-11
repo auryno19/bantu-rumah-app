@@ -16,7 +16,7 @@
                 @foreach ($asistants as $asistant)
                     <div class="row mb-3">
                         <div class="col-md-5">
-                            <img src="{{ asset('assets/images/img1.jpg') }}" alt="gambar">
+                            <img src="{{ asset('images/photo-assist') }}/{{ $asistant->foto !== null ? $asistant->foto : 'thumb.jpg' }}" alt="gambar">
                         </div>
                         <div class="description col-md-7 d-flex align-content-center">
                             <div class="row">
@@ -35,7 +35,9 @@
                     </div>
                 @endforeach
 
-    
+            <div class="d-flex justify-content-center mt-5">
+                {{ $asistants->links() }}
+            </div>
 
                 {{-- <div class="row mb-3">
                     <div class="col-md-5">

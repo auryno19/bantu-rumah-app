@@ -172,6 +172,19 @@ class AsistantController extends Controller
             $asistant->deskripsi = $request->get('deskripsi');
             $asistant->save();
         }
+        if ($request->hasFile('foto')) {
+            $request->validate([
+                'foto' => 'mimes:png,jpeg,jpg|max:2048',
+            ]);        
+            if(isset($asistant->foto)){
+                $path = "images/photo-assist/";
+                File::delete($path . $asistant->foto);
+            }
+            $PhotoName = time().'.'.$request->foto->extension();
+            $request->foto->move(public_path('images/photo-assist/'), $PhotoName);
+            $asistant->foto = $PhotoName;
+            $asistant->save();
+        }
 
         return redirect('/admin/asistant/' . $asistant->id )->with('success', 'Data berhasil diedit');
     }

@@ -14,7 +14,7 @@
             <div class="wrap">
                 <div class="row mb-3">
                     <div class="col-md-5">
-                        <img src="{{ asset('assets/images/img1.jpg') }}" alt="gambar">
+                        <img src="{{ asset('images/photo-assist') }}/{{ $asistant->foto !== null ? $asistant->foto : 'thumb.jpg' }}" alt="gambar">
                     </div>
                     <div class="col-md-7 ">
                         <div class="row">

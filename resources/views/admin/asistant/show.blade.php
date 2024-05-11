@@ -43,7 +43,10 @@
         <div class="wrap">
             <div class="row mb-3">
                 <div class="col-md-5">
-                    <img src="{{ asset('assets/images/img1.jpg') }}" alt="gambar">
+                    <a onclick="myFunction(this.id)" type="button" data-bs-toggle="modal"
+                        data-bs-target="#editModal" id="foto">
+                        <img src="{{ asset('images/photo-assist') }}/{{ $asistant->foto !== null ? $asistant->foto : 'thumb.jpg' }}" alt="gambar">
+                    </a>
                 </div>
                 <div class="col-md-7 ">
                     <div class="row">
@@ -211,6 +214,36 @@
                     value="{{ $asistant->alamat }}" required/>
                 </div>
                 `;
+            }
+
+            else if (id == "foto") {
+                document.getElementById("modal-header").innerHTML = `
+                <h1 class="modal-title fs-5" id="editModalLabel">Edit Foto </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                `;
+                document.getElementById("modal-body").innerHTML = `
+                <div class="mb-3">
+                <label for="foto" class="form-label">Foto</label>
+                <input class="form-control" type="file" name="foto" id="imageImg" onchange="imgpreview()">
+                <img src="{{ asset('images/photo-assist') }}/{{ $asistant->foto !== null ? $asistant->foto : 'thumb.jpg' }}" id="editpreview" class=" img-fluid mb-3 col-sm-5 ">
+                <img class="img-preview img-fluid mb-3 col-sm-5 ">
+                </div>
+                `;
+            }
+        }
+        function imgpreview() {
+            const recentImage = document.querySelector('#editpreview');
+            const image = document.querySelector('#imageImg');
+            const imgPreview = document.querySelector('.img-preview');
+
+            recentImage.style.display = 'none';
+            imgPreview.style.display = 'block';
+
+            const reader = new FileReader();
+            reader.readAsDataURL(image.files[0]);
+
+            reader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
             }
         }
     </script>
