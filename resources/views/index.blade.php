@@ -11,9 +11,33 @@
     </div>
     <div class="container-fluid">
         <div class="container">
-            <h2>Rekomendasi Asisten Rumah Tangga</h2>
+            <h2>{{ isset($results) ? 'Rekomendasi Asisten Rumah Tangga' : 'Daftar Asisten Rumah Tangga' }}</h2>
             <div class="list-recom">
-                @foreach ($asistants as $asistant)
+                @if (isset($results))
+                    @foreach ( $results as $result)
+                    <div class="row mb-3">
+                        <div class="col-md-5">
+                            <img src="{{ asset('images/photo-assist') }}/{{ $result['asistant']->foto !== null ? $result['asistant']->foto : 'thumb.jpg' }}" alt="foto {{ $result['asistant']->nama }}">
+                        </div>
+                        <div class="description col-md-7 d-flex align-content-center">
+                            <div class="row">
+                                <h3>{{ $result['asistant']->nama }}</h3>
+                                <p class="line-clamp-5">{{ $result['asistant']->deskripsi }}</p>
+                            </div>
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-md-3 ">
+                                    <button class="btn btn-submit">Booking</button>
+                                </div>
+                                <div class="col-md-3">
+                                    <a type="button" href="/profile/{{ $result['asistant']->id }}" class="btn btn-submit">Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                @else
+                    
+                @foreach ( $asistants as $asistant)
                     <div class="row mb-3">
                         <div class="col-md-5">
                             <img src="{{ asset('images/photo-assist') }}/{{ $asistant->foto !== null ? $asistant->foto : 'thumb.jpg' }}" alt="foto {{ $asistant->nama }}">
@@ -34,10 +58,11 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="d-flex justify-content-center mt-5">
+                    {{ $asistants->links() }}
+                </div>
+                @endif
 
-            <div class="d-flex justify-content-center mt-5">
-                {{ $asistants->links() }}
-            </div>
 
                 {{-- <div class="row mb-3">
                     <div class="col-md-5">

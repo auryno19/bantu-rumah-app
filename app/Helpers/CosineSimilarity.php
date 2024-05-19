@@ -3,32 +3,33 @@
 namespace App\Helpers;
 
 use Sastrawi\Stemmer\StemmerFactory;
-use Sastrawi\Tokenizer\TokenizerFactory;
 
 class CosineSimilarity
 {
     private $stemmer;
-    private $tokenizer;
 
     public function __construct()
     {
-        $this->stemmer = new StemmerFactory();
-        $this->tokenizer = new TokenizerFactory();
+        // Membuat instance dari Stemmer, bukan StemmerFactory
+        $stemmerFactory = new StemmerFactory();
+        $this->stemmer = $stemmerFactory->createStemmer();
     }
 
     public function calculateSimilarity($query, $document)
     {
+        // dd($document);
         // Preprocess the query and document
-        $query = $this->preprocessText($query);
-        $document = $this->preprocessText($document);
+        $query = $this->preprocessAndTokenize($query);
+        $document = $this->preprocessAndTokenize($document);
 
-        // Tokenize the query and document
-        $queryTokens = $this->tokenizer->tokenize($query);
-        $documentTokens = $this->tokenizer->tokenize($document);
 
-        // Stem the tokens
-        $queryStems = array_map([$this->stemmer, 'stem'], $queryTokens);
-        $documentStems = array_map([$this->stemmer, 'stem'], $documentTokens);
+        // Stem the tokens dengan menggunakan fungsi anonim
+        $queryStems = array_map(function($word) {
+            return $this->stemmer->stem($word);
+        }, $query);
+        $documentStems = array_map(function($word) {
+            return $this->stemmer->stem($word);
+        }, $document);
 
         // Calculate the dot product of the two vectors
         $dotProduct = 0;
@@ -43,20 +44,23 @@ class CosineSimilarity
         $documentMagnitude = sqrt(count($documentStems));
 
         // Calculate the cosine similarity
-        $cosineSimilarity = $dotProduct / ($queryMagnitude * $documentMagnitude);
+        $cosineSimilarity = 0;
+        if ($queryMagnitude != 0 && $documentMagnitude != 0) {
+            $cosineSimilarity = $dotProduct / ($queryMagnitude * $documentMagnitude);
+        }
 
         return $cosineSimilarity;
     }
 
-    private function preprocessText($text)
+    private function preprocessAndTokenize($text)
     {
-        // Convert the text to lowercase
+        // Mengubah teks menjadi huruf kecil
         $text = strtolower($text);
 
-        // Remove punctuation and special characters
+        // Menghilangkan tanda baca dan karakter khusus
         $text = preg_replace("/[^\w\s]/", "", $text);
 
-        // Remove stopwords
+        // Mendefinisikan stopwords
         $stopwords = [
             'yang', 'untuk', 'pada', 'ke', 'para', 'namun', 'menurut', 'antara', 'dia', 'dua',
             'ia', 'seperti', 'jika', 'jika', 'sehingga', 'kembali', 'dan', 'tidak', 'ini', 'karena',
@@ -75,14 +79,15 @@ class CosineSimilarity
             'tolong', 'kan', 'itu', 'sini', 'agar', 'ini', 'mati','nih','dong','ada','apa', 'adalah',
             'sudah','untuk', 'dengan', 'kurang', 'jadi','maka','kapan','dimana','siapa','akan','dengan','supaya','jadinya','deh','yang'
         ];
-        $textWords = explode(" ", $text);
-        $text = "";
-        foreach ($textWords as $word) {
-            if (!in_array($word, $stopwords)) {
-                $text .= $word . " ";
-            }
-        }
+        // Memisahkan teks menjadi token berdasarkan spasi
+        $tokens = preg_split("/[\s]+/", $text);
 
-        return $text;
+        // Menghilangkan stopwords dari token
+        $filteredTokens = array_filter($tokens, function($token) use ($stopwords) {
+            return !in_array($token, $stopwords);
+        });
+
+        return array_values($filteredTokens); // Mengembalikan token sebagai array numerik
     }
+
 }
