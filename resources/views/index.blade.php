@@ -22,6 +22,7 @@
                         <div class="description col-md-7 d-flex align-content-center">
                             <div class="row">
                                 <h3>{{ $result['asistant']->nama }}</h3>
+                                <small>Similarity : {{ round($result['similarity'] * 100) }} %</small>
                                 <p class="line-clamp-5">{{ $result['asistant']->deskripsi }}</p>
                             </div>
                             <div class="row d-flex justify-content-between">

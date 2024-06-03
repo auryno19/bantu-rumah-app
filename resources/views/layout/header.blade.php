@@ -8,9 +8,9 @@
           <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Layanan Kami</a>
+          <a class="nav-link" href="/form">Rekomendasi</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link" href="#">Testimoni</a>
         </li>
         <li class="nav-item">
@@ -21,7 +21,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Tentang Kami</a>
-        </li>
+        </li> --}}
         <li class="nav-item">
           @auth
             

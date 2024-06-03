@@ -17,7 +17,7 @@ class AsistantSeeder extends Seeder
     {
         Asistant::create([
             'nama' => 'Bella',
-            'umur' => '25',
+            'umur' => '28',
             'gender' => 'P',
             'alamat' => 'Malang',
             'telepon' => '084458694948',
@@ -26,7 +26,7 @@ class AsistantSeeder extends Seeder
         ]);
         Asistant::create([
             'nama' => 'Ema',
-            'umur' => '25',
+            'umur' => '22',
             'gender' => 'P',
             'alamat' => 'Surabaya',
             'telepon' => '084458694948',
@@ -44,7 +44,7 @@ class AsistantSeeder extends Seeder
         ]);
         Asistant::create([
             'nama' => 'Tuti',
-            'umur' => '25',
+            'umur' => '26',
             'gender' => 'P',
             'alamat' => 'Surabaya',
             'telepon' => '084458694948',
@@ -80,7 +80,7 @@ class AsistantSeeder extends Seeder
         ]);
         Asistant::create([
             'nama' => 'Sella',
-            'umur' => '25',
+            'umur' => '17',
             'gender' => 'P',
             'alamat' => 'Gresik',
             'telepon' => '084458694948',
@@ -107,7 +107,7 @@ class AsistantSeeder extends Seeder
         ]);
         Asistant::create([
             'nama' => 'Titin Suharti',
-            'umur' => '25',
+            'umur' => '40',
             'gender' => 'P',
             'alamat' => 'MAdura',
             'telepon' => '084458694948',
@@ -116,7 +116,7 @@ class AsistantSeeder extends Seeder
         ]);
         Asistant::create([
             'nama' => 'RAchma',
-            'umur' => '25',
+            'umur' => '19',
             'gender' => 'P',
             'alamat' => 'Malang',
             'telepon' => '084458694948',
@@ -125,7 +125,7 @@ class AsistantSeeder extends Seeder
         ]);
         Asistant::create([
             'nama' => 'Indah',
-            'umur' => '25',
+            'umur' => '30',
             'gender' => 'P',
             'alamat' => 'Malang',
             'telepon' => '084458694948',
